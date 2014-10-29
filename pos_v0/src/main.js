@@ -1,14 +1,23 @@
 //TODO: Please write code in this file.
 function printInventory(inputs) {
-  console.log('***<没钱赚商店>购物清单***');
+  var result = '***<没钱赚商店>购物清单***\n'
   var tot = 0;
-  for(var item in inputs){
-  	var t_price = item.price * item.count;
-    	console.log('名称:' + item.name + ',数量:' + item.count + item.unit + ',单价:' + item.price + '(元),小计:' + t_price + '(元)');
-	tot += t_price
+  for(var index = 0; index < inputs.length; index++){
+  	var t_price = inputs[index].price * inputs[index].count;
+
+    result += '名称：' + inputs[index].name +
+    '，数量：' + inputs[index].count + inputs[index].unit +
+    '，单价：' + inputs[index].price.toFixed(2) +
+    '(元)'+
+    ','+  //这里的逗号如果用英文的就可以通过测试，用中文则不行
+    '小计：'+ t_price.toFixed(2) + '(元)\n';
+
+	  tot += t_price
   };
-  console.log('----------------------');
-  console.log('总计：' + tot + '(元)');
-  console.log('**********************');
+  result += '----------------------\n';
+  result += '总计：' + tot.toFixed(2) + '(元)\n';
+  result += '**********************';
+
+  console.log(result);
 
 }
