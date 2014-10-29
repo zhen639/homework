@@ -56,7 +56,7 @@ function printInventory(inputs) {
     result += '----------------------\n';
     result += '挥泪赠送商品：\n';
     for(it in gifts){
-      result += '名称：' + index[it].name + '，数量：' + gifts[it].count + '\n';
+      result += '名称：' + index[it].name + '，数量：' + gifts[it].count + index[it].unit + '\n';
       tot_save += gifts[it].price
     };
     result += '----------------------\n';
