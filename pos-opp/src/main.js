@@ -18,9 +18,9 @@ function FormatItems(inputs){
     return this.content;
 }
 
-
+var SPLITMARKER = '-';
 function splitname (barc){
-    var sname = barc.split('-');
+    var sname = barc.split(SPLITMARKER);
     if (sname.length < 2) {
         sname[1] = 1;
     }
